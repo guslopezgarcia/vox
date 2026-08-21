@@ -1,0 +1,1584 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Gus López — Voice Actor · Narrator</title>
+
+  <meta
+    name="description"
+    content="Gus López is a voice actor and narrator specializing in intimate storytelling and playful, natural delivery."
+  >
+
+  <meta property="og:title" content="Gus López — Voice Actor · Narrator">
+  <meta
+    property="og:description"
+    content="Intimate storytelling. Playful, natural delivery. A voice that feels close, human, and unforced."
+  >
+  <meta property="og:type" content="website">
+
+  <style>
+    /* ============================================================
+       RESET / FOUNDATION
+       ============================================================ */
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    :root {
+      --ink: #171717;
+      --ink-soft: #424242;
+      --muted: #747474;
+      --paper: #f5f2ec;
+      --paper-dark: #e9e4da;
+      --card: #fbfaf7;
+      --accent: #a85c3b;
+      --accent-dark: #7d4028;
+      --line: rgba(23, 23, 23, 0.12);
+      --max: 1180px;
+      --serif: Georgia, "Times New Roman", serif;
+      --sans: Inter, -apple-system, BlinkMacSystemFont, "Segoe UI",
+              Helvetica, Arial, sans-serif;
+      --mono: "SFMono-Regular", Consolas, "Liberation Mono", monospace;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      background: var(--paper);
+      color: var(--ink);
+      font-family: var(--sans);
+      line-height: 1.5;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    img {
+      max-width: 100%;
+      display: block;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    button {
+      font: inherit;
+    }
+
+    .wrap {
+      width: min(var(--max), calc(100% - 48px));
+      margin: 0 auto;
+    }
+
+    /* ============================================================
+       LANGUAGE
+       ============================================================ */
+
+    [data-lang="es"] {
+      display: none;
+    }
+
+    body.es [data-lang="en"] {
+      display: none;
+    }
+
+    body.es [data-lang="es"] {
+      display: inline;
+    }
+
+    /* ============================================================
+       NAV
+       ============================================================ */
+
+    nav {
+      position: fixed;
+      z-index: 100;
+      top: 0;
+      left: 0;
+      width: 100%;
+      background: rgba(245, 242, 236, 0.86);
+      backdrop-filter: blur(14px);
+      -webkit-backdrop-filter: blur(14px);
+      border-bottom: 1px solid transparent;
+      transition: border-color .25s ease;
+    }
+
+    nav.scrolled {
+      border-color: var(--line);
+    }
+
+    .nav-inner {
+      min-height: 72px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 30px;
+    }
+
+    .brand {
+      font-family: var(--serif);
+      font-size: 21px;
+      font-weight: 600;
+      letter-spacing: -0.02em;
+    }
+
+    .nav-right {
+      display: flex;
+      align-items: center;
+      gap: 28px;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 24px;
+      font-size: 13px;
+      color: var(--ink-soft);
+    }
+
+    .nav-links a {
+      transition: color .2s ease;
+    }
+
+    .nav-links a:hover {
+      color: var(--accent);
+    }
+
+    .lang-switch {
+      border: 1px solid var(--line);
+      background: transparent;
+      border-radius: 999px;
+      padding: 7px 11px;
+      font-family: var(--mono);
+      font-size: 10px;
+      letter-spacing: .08em;
+      cursor: pointer;
+      color: var(--ink-soft);
+    }
+
+    /* ============================================================
+       HERO
+       ============================================================ */
+
+    .hero {
+      min-height: 92vh;
+      padding: 150px 0 90px;
+      display: flex;
+      align-items: center;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero::before {
+      content: "";
+      position: absolute;
+      width: 600px;
+      height: 600px;
+      border-radius: 50%;
+      right: -180px;
+      top: 90px;
+      background:
+        radial-gradient(
+          circle,
+          rgba(168, 92, 59, .14) 0%,
+          rgba(168, 92, 59, .04) 42%,
+          transparent 70%
+        );
+      pointer-events: none;
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: minmax(0, 1.25fr) minmax(300px, .75fr);
+      align-items: center;
+      gap: 90px;
+    }
+
+    .eyebrow {
+      font-family: var(--mono);
+      text-transform: uppercase;
+      letter-spacing: .14em;
+      font-size: 10px;
+      color: var(--accent);
+      margin-bottom: 22px;
+    }
+
+    h1 {
+      font-family: var(--serif);
+      font-weight: 500;
+      font-size: clamp(58px, 8vw, 112px);
+      line-height: .92;
+      letter-spacing: -.055em;
+      max-width: 850px;
+    }
+
+    .hero-title-sub {
+      display: block;
+      font-family: var(--sans);
+      font-size: clamp(16px, 2vw, 23px);
+      line-height: 1.2;
+      letter-spacing: -.02em;
+      color: var(--ink-soft);
+      margin-top: 24px;
+    }
+
+    .hero-description {
+      max-width: 620px;
+      margin-top: 32px;
+      font-size: clamp(18px, 2vw, 22px);
+      line-height: 1.55;
+      color: var(--ink-soft);
+    }
+
+    .hero-description em {
+      font-family: var(--serif);
+      color: var(--ink);
+    }
+
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-top: 38px;
+    }
+
+    .button {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 48px;
+      padding: 0 20px;
+      border-radius: 999px;
+      font-size: 13px;
+      font-weight: 600;
+      transition:
+        transform .2s ease,
+        background .2s ease,
+        color .2s ease;
+    }
+
+    .button:hover {
+      transform: translateY(-2px);
+    }
+
+    .button-primary {
+      background: var(--ink);
+      color: white;
+    }
+
+    .button-primary:hover {
+      background: var(--accent-dark);
+    }
+
+    .button-secondary {
+      border: 1px solid var(--line);
+      color: var(--ink);
+      background: rgba(255,255,255,.25);
+    }
+
+    .button-secondary:hover {
+      border-color: var(--accent);
+      color: var(--accent);
+    }
+
+    /* Portrait */
+
+    .portrait-wrap {
+      position: relative;
+      justify-self: end;
+      width: min(390px, 100%);
+    }
+
+    .portrait {
+      width: 100%;
+      aspect-ratio: 4 / 5;
+      object-fit: cover;
+      object-position: center;
+      filter: saturate(.9);
+    }
+
+    .portrait-frame {
+      position: absolute;
+      inset: 18px -18px -18px 18px;
+      border: 1px solid rgba(168, 92, 59, .35);
+      pointer-events: none;
+      z-index: -1;
+    }
+
+    .portrait-label {
+      position: absolute;
+      bottom: -34px;
+      left: 0;
+      font-family: var(--mono);
+      font-size: 10px;
+      color: var(--muted);
+      letter-spacing: .1em;
+      text-transform: uppercase;
+    }
+
+    /* ============================================================
+       INTRO STRIP
+       ============================================================ */
+
+    .intro-strip {
+      border-top: 1px solid var(--line);
+      border-bottom: 1px solid var(--line);
+      padding: 25px 0;
+    }
+
+    .intro-strip-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 30px;
+    }
+
+    .intro-strip p {
+      font-family: var(--mono);
+      font-size: 10px;
+      text-transform: uppercase;
+      letter-spacing: .12em;
+      color: var(--muted);
+    }
+
+    .dots {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .dots span {
+      display: block;
+      width: 5px;
+      height: 5px;
+      border-radius: 50%;
+      background: var(--accent);
+    }
+
+    /* ============================================================
+       SECTIONS
+       ============================================================ */
+
+    section {
+      padding: 110px 0;
+    }
+
+    .section-header {
+      display: grid;
+      grid-template-columns: 180px 1fr;
+      gap: 40px;
+      margin-bottom: 60px;
+    }
+
+    .section-label {
+      font-family: var(--mono);
+      font-size: 10px;
+      text-transform: uppercase;
+      letter-spacing: .14em;
+      color: var(--accent);
+      padding-top: 8px;
+    }
+
+    h2 {
+      font-family: var(--serif);
+      font-weight: 500;
+      font-size: clamp(38px, 5vw, 64px);
+      line-height: 1;
+      letter-spacing: -.04em;
+      max-width: 850px;
+    }
+
+    /* ============================================================
+       WORK
+       ============================================================ */
+
+    .work-grid {
+      display: grid;
+      grid-template-columns: repeat(12, 1fr);
+      gap: 22px;
+    }
+
+    .work-card {
+      background: var(--card);
+      border: 1px solid var(--line);
+      overflow: hidden;
+      transition:
+        transform .25s ease,
+        box-shadow .25s ease;
+    }
+
+    .work-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 20px 45px rgba(23,23,23,.08);
+    }
+
+    .work-card:nth-child(1) {
+      grid-column: span 12;
+    }
+
+    .work-card:nth-child(2),
+    .work-card:nth-child(3) {
+      grid-column: span 6;
+    }
+
+    .video {
+      position: relative;
+      aspect-ratio: 16 / 9;
+      background: #111;
+    }
+
+    .video iframe {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      border: 0;
+    }
+
+    .work-info {
+      padding: 25px 26px 28px;
+    }
+
+    .work-type {
+      font-family: var(--mono);
+      font-size: 9px;
+      text-transform: uppercase;
+      letter-spacing: .13em;
+      color: var(--accent);
+      margin-bottom: 9px;
+    }
+
+    .work-info h3 {
+      font-family: var(--serif);
+      font-size: 28px;
+      font-weight: 500;
+      letter-spacing: -.025em;
+    }
+
+    .work-info p {
+      color: var(--ink-soft);
+      font-size: 14px;
+      line-height: 1.65;
+      margin-top: 9px;
+      max-width: 650px;
+    }
+
+    /* ============================================================
+       ABOUT
+       ============================================================ */
+
+    .about {
+      background: var(--ink);
+      color: white;
+    }
+
+    .about .section-label {
+      color: #d08a69;
+    }
+
+    .about-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 90px;
+    }
+
+    .about-copy {
+      font-size: 21px;
+      line-height: 1.7;
+      color: rgba(255,255,255,.78);
+    }
+
+    .about-copy p + p {
+      margin-top: 24px;
+    }
+
+    .about-copy strong {
+      color: white;
+      font-weight: 500;
+    }
+
+    .about-copy em {
+      font-family: var(--serif);
+      color: white;
+    }
+
+    .credentials {
+      border-top: 1px solid rgba(255,255,255,.16);
+    }
+
+    .credential {
+      display: grid;
+      grid-template-columns: 130px 1fr;
+      gap: 25px;
+      padding: 21px 0;
+      border-bottom: 1px solid rgba(255,255,255,.16);
+    }
+
+    .credential-label {
+      font-family: var(--mono);
+      text-transform: uppercase;
+      letter-spacing: .1em;
+      font-size: 9px;
+      color: rgba(255,255,255,.45);
+    }
+
+    .credential-value {
+      font-size: 14px;
+      color: rgba(255,255,255,.85);
+      line-height: 1.6;
+    }
+
+    /* ============================================================
+       STUDIO
+       ============================================================ */
+
+    .studio-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 90px;
+      align-items: start;
+    }
+
+    .studio-intro {
+      font-family: var(--serif);
+      font-size: clamp(32px, 4vw, 52px);
+      line-height: 1.05;
+      letter-spacing: -.035em;
+    }
+
+    .equipment {
+      border-top: 1px solid var(--line);
+    }
+
+    .equipment-row {
+      display: grid;
+      grid-template-columns: 130px 1fr;
+      gap: 25px;
+      padding: 22px 0;
+      border-bottom: 1px solid var(--line);
+    }
+
+    .equipment-label {
+      font-family: var(--mono);
+      text-transform: uppercase;
+      font-size: 9px;
+      letter-spacing: .11em;
+      color: var(--muted);
+    }
+
+    .equipment-name {
+      font-size: 15px;
+      color: var(--ink-soft);
+    }
+
+    /* ============================================================
+       CTA
+       ============================================================ */
+
+    .cta {
+      background: var(--paper-dark);
+    }
+
+    .cta-inner {
+      display: grid;
+      grid-template-columns: 1.2fr .8fr;
+      gap: 80px;
+      align-items: end;
+    }
+
+    .cta h2 {
+      max-width: 700px;
+    }
+
+    .cta-copy {
+      color: var(--ink-soft);
+      font-size: 17px;
+      line-height: 1.65;
+      margin-top: 24px;
+      max-width: 620px;
+    }
+
+    .cta-actions {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 12px;
+    }
+
+    .cta-email {
+      font-family: var(--mono);
+      font-size: 12px;
+      color: var(--ink-soft);
+      word-break: break-all;
+    }
+
+    /* ============================================================
+       FOOTER
+       ============================================================ */
+
+    footer {
+      background: var(--paper-dark);
+      border-top: 1px solid var(--line);
+      padding: 28px 0;
+    }
+
+    .footer-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+    }
+
+    .footer-copy {
+      font-family: var(--mono);
+      font-size: 9px;
+      letter-spacing: .06em;
+      color: var(--muted);
+    }
+
+    .footer-links {
+      display: flex;
+      gap: 20px;
+      font-family: var(--mono);
+      font-size: 9px;
+      text-transform: uppercase;
+      letter-spacing: .08em;
+    }
+
+    .footer-links a:hover {
+      color: var(--accent);
+    }
+
+    /* ============================================================
+       REVEAL
+       ============================================================ */
+
+    .reveal {
+      opacity: 0;
+      transform: translateY(18px);
+      transition:
+        opacity .7s ease,
+        transform .7s ease;
+    }
+
+    .reveal.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* ============================================================
+       RESPONSIVE
+       ============================================================ */
+
+    @media (max-width: 850px) {
+
+      .nav-links {
+        display: none;
+      }
+
+      .hero {
+        padding-top: 125px;
+      }
+
+      .hero-grid,
+      .about-grid,
+      .studio-grid,
+      .cta-inner {
+        grid-template-columns: 1fr;
+        gap: 55px;
+      }
+
+      .portrait-wrap {
+        justify-self: start;
+        width: min(340px, 80%);
+      }
+
+      .section-header {
+        grid-template-columns: 1fr;
+        gap: 14px;
+        margin-bottom: 38px;
+      }
+
+      .work-card:nth-child(1),
+      .work-card:nth-child(2),
+      .work-card:nth-child(3) {
+        grid-column: span 12;
+      }
+
+      .cta-actions {
+        align-items: flex-start;
+      }
+    }
+
+    @media (max-width: 560px) {
+
+      .wrap {
+        width: min(var(--max), calc(100% - 30px));
+      }
+
+      section {
+        padding: 75px 0;
+      }
+
+      .hero {
+        min-height: auto;
+        padding-bottom: 70px;
+      }
+
+      h1 {
+        font-size: clamp(52px, 16vw, 76px);
+      }
+
+      .hero-description {
+        font-size: 18px;
+      }
+
+      .intro-strip-inner {
+        align-items: flex-start;
+      }
+
+      .credential,
+      .equipment-row {
+        grid-template-columns: 1fr;
+        gap: 8px;
+      }
+
+      .footer-inner {
+        align-items: flex-start;
+        flex-direction: column;
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      html {
+        scroll-behavior: auto;
+      }
+
+      *,
+      *::before,
+      *::after {
+        transition: none !important;
+        animation: none !important;
+      }
+
+      .reveal {
+        opacity: 1;
+        transform: none;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- ============================================================
+       NAVIGATION
+       ============================================================ -->
+
+  <nav id="nav">
+    <div class="wrap nav-inner">
+
+      <a href="#home" class="brand">Gus López</a>
+
+      <div class="nav-right">
+
+        <div class="nav-links">
+          <a href="#work">
+            <span data-lang="en">Work</span>
+            <span data-lang="es">Trabajo</span>
+          </a>
+
+          <a href="#about">
+            <span data-lang="en">About</span>
+            <span data-lang="es">Sobre mí</span>
+          </a>
+
+          <a href="#studio">
+            <span data-lang="en">Studio</span>
+            <span data-lang="es">Estudio</span>
+          </a>
+
+          <a href="#contact">
+            <span data-lang="en">Book me</span>
+            <span data-lang="es">Contrátame</span>
+          </a>
+        </div>
+
+        <button class="lang-switch" id="langSwitch" aria-label="Switch language">
+          ES
+        </button>
+
+      </div>
+    </div>
+  </nav>
+
+
+  <main>
+
+    <!-- ==========================================================
+         HERO
+         ========================================================== -->
+
+    <header class="hero" id="home">
+
+      <div class="wrap hero-grid">
+
+        <div class="hero-copy reveal">
+
+          <p class="eyebrow">
+            <span data-lang="en">Voice Actor · Narrator</span>
+            <span data-lang="es">Actor de Voz · Narrador</span>
+          </p>
+
+          <h1>
+            Gus López
+            <span class="hero-title-sub">
+              <span data-lang="en">Voice Actor · Narrator</span>
+              <span data-lang="es">Actor de Voz · Narrador</span>
+            </span>
+          </h1>
+
+          <p class="hero-description">
+            <span data-lang="en">
+              I specialize in <em>intimate storytelling</em> and playful,
+              natural delivery that feels close, human, and unforced.
+            </span>
+
+            <span data-lang="es">
+              Me especializo en <em>contar historias de forma íntima</em>
+              y en una interpretación natural y juguetona que se siente
+              cercana, humana y sin esfuerzo.
+            </span>
+          </p>
+
+          <div class="hero-actions">
+
+            <a
+              class="button button-primary"
+              href="https://voice123.com/book/gustavolopezgarcia"
+              target="_blank"
+              rel="noopener"
+            >
+              <span data-lang="en">Book me on Voice123 →</span>
+              <span data-lang="es">Contrátame en Voice123 →</span>
+            </a>
+
+            <a class="button button-secondary" href="#work">
+              <span data-lang="en">Hear me</span>
+              <span data-lang="es">Escúchame</span>
+            </a>
+
+          </div>
+
+        </div>
+
+
+        <div class="portrait-wrap reveal">
+
+          <img
+            class="portrait"
+            src="https://voice123.com/pics/users/3660410/l_jp3M5.jpg"
+            alt="Gus López, voice actor and narrator"
+          >
+
+          <div class="portrait-frame"></div>
+
+          <div class="portrait-label">
+            VOICE · STORY · CHARACTER
+          </div>
+
+        </div>
+
+      </div>
+
+    </header>
+
+
+    <!-- ==========================================================
+         STRIP
+         ========================================================== -->
+
+    <div class="intro-strip">
+
+      <div class="wrap intro-strip-inner">
+
+        <p>
+          <span data-lang="en">
+            Commercial · Documentary · Corporate · Character · Narration
+          </span>
+
+          <span data-lang="es">
+            Comercial · Documental · Corporativo · Personajes · Narración
+          </span>
+        </p>
+
+        <div class="dots" aria-hidden="true">
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+
+      </div>
+
+    </div>
+
+
+    <!-- ==========================================================
+         WORK
+         ========================================================== -->
+
+    <section id="work">
+
+      <div class="wrap">
+
+        <div class="section-header reveal">
+
+          <div class="section-label">
+            <span data-lang="en">Selected work</span>
+            <span data-lang="es">Trabajo seleccionado</span>
+          </div>
+
+          <h2>
+            <span data-lang="en">
+              A voice can sell, explain, transport, or simply make you listen.
+            </span>
+
+            <span data-lang="es">
+              Una voz puede vender, explicar, transportar o simplemente
+              hacer que quieras seguir escuchando.
+            </span>
+          </h2>
+
+        </div>
+
+
+        <div class="work-grid">
+
+          <!-- E.P. CARRILLO -->
+
+          <article class="work-card reveal">
+
+            <div class="video">
+
+              <iframe
+                src="https://www.youtube.com/embed/0_p1HfCDm1c"
+                title="E.P. Carrillo Cigars — Mini Documentary"
+                loading="lazy"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                allowfullscreen>
+              </iframe>
+
+            </div>
+
+            <div class="work-info">
+
+              <div class="work-type">
+                <span data-lang="en">Documentary · Brand Story</span>
+                <span data-lang="es">Documental · Historia de marca</span>
+              </div>
+
+              <h3>E.P. Carrillo Cigars</h3>
+
+              <p>
+                <span data-lang="en">
+                  A cinematic brand story built around atmosphere, craft,
+                  heritage, and a measured narrative delivery.
+                </span>
+
+                <span data-lang="es">
+                  Una historia de marca cinematográfica construida alrededor
+                  de la atmósfera, el oficio, la tradición y una narración
+                  contenida y expresiva.
+                </span>
+              </p>
+
+            </div>
+
+          </article>
+
+
+          <!-- COPILOT -->
+
+          <article class="work-card reveal">
+
+            <div class="video">
+
+              <iframe
+                src="https://www.youtube.com/embed/NGG0YpDfa8U"
+                title="Copilot+ PCs — Campaign Ad"
+                loading="lazy"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                allowfullscreen>
+              </iframe>
+
+            </div>
+
+            <div class="work-info">
+
+              <div class="work-type">
+                <span data-lang="en">Commercial · Technology</span>
+                <span data-lang="es">Comercial · Tecnología</span>
+              </div>
+
+              <h3>Copilot+ PCs</h3>
+
+              <p>
+                <span data-lang="en">
+                  Campaign voiceover for a technology audience—clear,
+                  energetic, approachable, and natural.
+                </span>
+
+                <span data-lang="es">
+                  Voz para campaña dirigida a una audiencia tecnológica:
+                  clara, energética, cercana y natural.
+                </span>
+              </p>
+
+            </div>
+
+          </article>
+
+
+          <!-- SAMSUNG -->
+
+          <article class="work-card reveal">
+
+            <div class="video">
+
+              <iframe
+                src="https://www.youtube.com/embed/e-pRR6f8qhM"
+                title="Samsung Mini LED — Soccer Campaign"
+                loading="lazy"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                allowfullscreen>
+              </iframe>
+
+            </div>
+
+            <div class="work-info">
+
+              <div class="work-type">
+                <span data-lang="en">Commercial · Sports</span>
+                <span data-lang="es">Comercial · Deportes</span>
+              </div>
+
+              <h3>Samsung Mini LED</h3>
+
+              <p>
+                <span data-lang="en">
+                  Sports campaign voiceover with a more immediate,
+                  energetic delivery designed to complement the action.
+                </span>
+
+                <span data-lang="es">
+                  Voz para campaña deportiva con una interpretación más
+                  inmediata y energética, diseñada para acompañar la acción.
+                </span>
+              </p>
+
+            </div>
+
+          </article>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- ==========================================================
+         ABOUT
+         ========================================================== -->
+
+    <section class="about" id="about">
+
+      <div class="wrap">
+
+        <div class="section-header reveal">
+
+          <div class="section-label">
+            <span data-lang="en">The voice</span>
+            <span data-lang="es">La voz</span>
+          </div>
+
+          <h2>
+            <span data-lang="en">
+              Storytelling starts with knowing how people actually talk.
+            </span>
+
+            <span data-lang="es">
+              Contar historias empieza por entender cómo hablamos las personas.
+            </span>
+          </h2>
+
+        </div>
+
+
+        <div class="about-grid">
+
+          <div class="about-copy reveal">
+
+            <div data-lang="en">
+
+              <p>
+                My voice comes from two worlds: <strong>journalism</strong>,
+                where clarity, presence, and connection matter, and
+                <strong>theater</strong>, where character and emotion bring
+                words to life.
+              </p>
+
+              <p>
+                I've worked in radio news and street reporting, and as a
+                theater actor I've learned to make an audience lean in,
+                laugh, listen, and believe.
+              </p>
+
+              <p>
+                Today, I bring that experience to voiceover with a focus on
+                <em>intimate storytelling, natural delivery, and human
+                connection.</em>
+              </p>
+
+            </div>
+
+
+            <div data-lang="es">
+
+              <p>
+                Mi voz viene de dos mundos: el <strong>periodismo</strong>,
+                donde importan la claridad, la presencia y la conexión, y
+                el <strong>teatro</strong>, donde el personaje y la emoción
+                hacen que las palabras cobren vida.
+              </p>
+
+              <p>
+                He trabajado en noticieros radiales y reportajes de calle,
+                y como actor de teatro he aprendido a hacer que una audiencia
+                se acerque, se ría, escuche y crea.
+              </p>
+
+              <p>
+                Hoy llevo esa experiencia al mundo de la voz, con especial
+                atención a la <em>narración íntima, la interpretación natural
+                y la conexión humana.</em>
+              </p>
+
+            </div>
+
+          </div>
+
+
+          <div class="credentials reveal">
+
+            <div class="credential">
+
+              <div class="credential-label">
+                <span data-lang="en">Background</span>
+                <span data-lang="es">Trayectoria</span>
+              </div>
+
+              <div class="credential-value">
+                <span data-lang="en">
+                  Journalism · Radio · Street Reporting · Theater
+                </span>
+
+                <span data-lang="es">
+                  Periodismo · Radio · Reportaje de calle · Teatro
+                </span>
+              </div>
+
+            </div>
+
+
+            <div class="credential">
+
+              <div class="credential-label">
+                <span data-lang="en">Training</span>
+                <span data-lang="es">Formación</span>
+              </div>
+
+              <div class="credential-value">
+                Formación de Actores de Doblaje Internacional
+                Individual Intensivo Online — Provoz Chile
+              </div>
+
+            </div>
+
+
+            <div class="credential">
+
+              <div class="credential-label">
+                <span data-lang="en">Languages</span>
+                <span data-lang="es">Idiomas</span>
+              </div>
+
+              <div class="credential-value">
+                Español · English
+              </div>
+
+            </div>
+
+
+            <div class="credential">
+
+              <div class="credential-label">
+                <span data-lang="en">Approach</span>
+                <span data-lang="es">Estilo</span>
+              </div>
+
+              <div class="credential-value">
+                <span data-lang="en">
+                  Intimate · Natural · Playful · Conversational · Human
+                </span>
+
+                <span data-lang="es">
+                  Íntimo · Natural · Juguetón · Conversacional · Humano
+                </span>
+              </div>
+
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- ==========================================================
+         STUDIO
+         ========================================================== -->
+
+    <section id="studio">
+
+      <div class="wrap">
+
+        <div class="section-header reveal">
+
+          <div class="section-label">
+            <span data-lang="en">Home studio</span>
+            <span data-lang="es">Estudio en casa</span>
+          </div>
+
+          <h2>
+            <span data-lang="en">
+              Clean, focused, ready to record.
+            </span>
+
+            <span data-lang="es">
+              Limpio, enfocado y listo para grabar.
+            </span>
+          </h2>
+
+        </div>
+
+
+        <div class="studio-grid">
+
+          <div class="studio-intro reveal">
+
+            <span data-lang="en">
+              Good performance deserves a recording chain that gets
+              out of the way.
+            </span>
+
+            <span data-lang="es">
+              Una buena interpretación merece una cadena de grabación
+              que simplemente desaparezca.
+            </span>
+
+          </div>
+
+
+          <div class="equipment reveal">
+
+            <div class="equipment-row">
+
+              <div class="equipment-label">
+                Microphone
+              </div>
+
+              <div class="equipment-name">
+                RØDE NT1 Signature Series
+              </div>
+
+            </div>
+
+
+            <div class="equipment-row">
+
+              <div class="equipment-label">
+                Interface
+              </div>
+
+              <div class="equipment-name">
+                Behringer UMC22 U-PHORIA
+              </div>
+
+            </div>
+
+
+            <div class="equipment-row">
+
+              <div class="equipment-label">
+                Recording
+              </div>
+
+              <div class="equipment-name">
+                <span data-lang="en">
+                  Home studio · Remote recording
+                </span>
+
+                <span data-lang="es">
+                  Estudio en casa · Grabación remota
+                </span>
+              </div>
+
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- ==========================================================
+         CONTACT / BOOK
+         ========================================================== -->
+
+    <section class="cta" id="contact">
+
+      <div class="wrap cta-inner">
+
+        <div class="reveal">
+
+          <div class="section-label">
+            <span data-lang="en">Let's work</span>
+            <span data-lang="es">Trabajemos juntos</span>
+          </div>
+
+          <h2>
+            <span data-lang="en">
+              Have a story, a script, or an idea?
+              Let's give it a voice.
+            </span>
+
+            <span data-lang="es">
+              ¿Tienes una historia, un guion o una idea?
+              Vamos a darle voz.
+            </span>
+          </h2>
+
+          <p class="cta-copy">
+
+            <span data-lang="en">
+              Available for commercial, corporate, documentary,
+              narration, character, and other voiceover projects.
+            </span>
+
+            <span data-lang="es">
+              Disponible para proyectos comerciales, corporativos,
+              documentales, narración, personajes y otros trabajos
+              de voz.
+            </span>
+
+          </p>
+
+        </div>
+
+
+        <div class="cta-actions reveal">
+
+          <a
+            class="button button-primary"
+            href="https://voice123.com/book/gustavolopezgarcia"
+            target="_blank"
+            rel="noopener"
+          >
+            <span data-lang="en">Book me on Voice123 →</span>
+            <span data-lang="es">Contrátame en Voice123 →</span>
+          </a>
+
+          <a
+            class="button button-secondary"
+            href="mailto:glg.vox.studio@gmail.com"
+          >
+            <span data-lang="en">Email me →</span>
+            <span data-lang="es">Escríbeme →</span>
+          </a>
+
+          <div class="cta-email">
+            glg.vox.studio@gmail.com
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+  </main>
+
+
+  <!-- ============================================================
+       FOOTER
+       ============================================================ -->
+
+  <footer>
+
+    <div class="wrap footer-inner">
+
+      <p class="footer-copy">
+        © <span id="year"></span> Gus López · Voice Actor · Narrator
+      </p>
+
+      <div class="footer-links">
+
+        <a
+          href="https://voice123.com/book/gustavolopezgarcia"
+          target="_blank"
+          rel="noopener"
+        >
+          Voice123
+        </a>
+
+        <a href="mailto:glg.vox.studio@gmail.com">
+          Email
+        </a>
+
+        <a href="#home">
+          <span data-lang="en">Back to top</span>
+          <span data-lang="es">Volver arriba</span>
+        </a>
+
+      </div>
+
+    </div>
+
+  </footer>
+
+
+  <!-- ============================================================
+       JAVASCRIPT
+       ============================================================ -->
+
+  <script>
+    (function () {
+
+      "use strict";
+
+      /* ----------------------------------------------------------
+         YEAR
+         ---------------------------------------------------------- */
+
+      document.getElementById("year").textContent =
+        new Date().getFullYear();
+
+
+      /* ----------------------------------------------------------
+         NAV SCROLL STATE
+         ---------------------------------------------------------- */
+
+      const nav = document.getElementById("nav");
+
+      function updateNav() {
+        if (window.scrollY > 20) {
+          nav.classList.add("scrolled");
+        } else {
+          nav.classList.remove("scrolled");
+        }
+      }
+
+      window.addEventListener("scroll", updateNav, {
+        passive: true
+      });
+
+      updateNav();
+
+
+      /* ----------------------------------------------------------
+         LANGUAGE SWITCH
+         ---------------------------------------------------------- */
+
+      const langSwitch = document.getElementById("langSwitch");
+
+      langSwitch.addEventListener("click", function () {
+
+        document.body.classList.toggle("es");
+
+        const spanish =
+          document.body.classList.contains("es");
+
+        langSwitch.textContent = spanish ? "EN" : "ES";
+
+        document.documentElement.lang =
+          spanish ? "es" : "en";
+
+      });
+
+
+      /* ----------------------------------------------------------
+         SCROLL REVEALS
+         ---------------------------------------------------------- */
+
+      const reducedMotion =
+        window.matchMedia(
+          "(prefers-reduced-motion: reduce)"
+        ).matches;
+
+      const revealElements =
+        document.querySelectorAll(".reveal");
+
+      if (reducedMotion) {
+
+        revealElements.forEach(function (element) {
+          element.classList.add("visible");
+        });
+
+      } else {
+
+        const observer =
+          new IntersectionObserver(
+            function (entries) {
+
+              entries.forEach(function (entry) {
+
+                if (entry.isIntersecting) {
+
+                  entry.target.classList.add("visible");
+
+                  observer.unobserve(entry.target);
+
+                }
+
+              });
+
+            },
+            {
+              threshold: 0.12
+            }
+          );
+
+        revealElements.forEach(function (element) {
+          observer.observe(element);
+        });
+
+      }
+
+    })();
+  </script>
+
+</body>
+</html>
